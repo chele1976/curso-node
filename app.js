@@ -2,7 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const hbs = require('hbs');
 
-const PORT = process.env.port;
 const app = express();
 
 
@@ -47,6 +46,6 @@ app.get('*', function (req, res) {
   res.render(__dirname + '/public/views/notFound');
   });
   
-app.listen(PORT);
+app.listen(process.env.PORT);
 
-console.log("Webserver escuchando en el puerto: ", PORT);
+console.log("Webserver escuchando en el puerto: ", process.env.PORT);
